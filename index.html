@@ -11,7 +11,46 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
+<body>
+  <h1>Investment Advisor</h1>
+  <div>
+    <p1 id="message"></p1>
+  </div>
+  <br>
+
+  <form id="sign-up">
+    <label>Email:</label>
+    <input name="credentials[email]" type="email">
+    <label>Password:</label>
+    <input name="credentials[password]" type="password">
+    <label>Password Confirmation:</label>
+    <input name="credentials[password_confirmation]" type="password">
+    <input type="submit" value="sign-up">
+  </form>
+
+  <br>
+
+  <form id="sign-in">
+    <label>Email:</label>
+    <input name="credentials[email]" type="email">
+    <label>Password:</label>
+    <input name="credentials[password]" type="password">
+    <input type="submit" value="sign-in">
+  </form>
+
+  <br>
+  <form id="sign-out">
+    <input type="submit" value="sign-out">
+  </form>
+  <br>
+
+  <form id="new-portfolio">
+    <input type="submit" value="Get Portfolio">
+  </form>
+  <br>
+  <div>
+    <p1 id="gameMessage"></p1>
+  </div>
+
     </body>
 </html>
