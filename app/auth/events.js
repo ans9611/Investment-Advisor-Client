@@ -34,7 +34,14 @@ const onNewPortfolio = function(event) {
   api.newPortfolio(data)
     .then(ui.onNewPortfolioSuccess)
     .catch(ui.onNewPortfolioFailure);
+}
 
+const onShowData = function(event) {
+  event.preventDefault();
+  console.log("!")
+  api.showData()
+  .then(ui.onShowDataSuccess);
+  .catch(ui.onShowDataFailure)
 }
 
 module.exports = {
@@ -42,4 +49,5 @@ module.exports = {
   onSignIn,
   onSignOut,
   onNewPortfolio,
+  onShowData
 };

@@ -38,9 +38,20 @@ const newPortfolio = function (data) {
   });
 };
 
+const showData = function () {
+    return $.ajax({
+      url: config.apiUrl + "/members",
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + store.token,
+      },
+    });
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   newPortfolio,
-};
+  showData
+}

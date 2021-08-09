@@ -42,6 +42,13 @@ const onNewPortfolioFailure = () => {
   $("#message").text(`Unable to get Portfolio`);
 };
 
+const onShowDataSuccess = () => {
+   $("#message").text("Successfully Get the Data");
+}
+const onShowDataFailure = () => {
+  $("#message").text("Unable to Get the Data");
+};
+
 module.exports = {
   onSignUpSuccess,
   onSighUpFailure,
@@ -51,4 +58,6 @@ module.exports = {
   onSignOutFailure,
   onNewPortfolioSuccess,
   onNewPortfolioFailure,
+  onShowDataSuccess,
+  onShowDataFailure
 };
