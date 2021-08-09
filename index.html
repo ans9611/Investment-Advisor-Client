@@ -44,13 +44,29 @@
   </form>
   <br>
 
+  <br>
   <form id="new-portfolio">
-    <input type="submit" value="Get Portfolio">
+      <label>Name</label>
+      <input name="member[name]" type="name">
+      <label>Risk</label>
+      <input name="member[risk]" type="risk">
+      <label>Investment</label>
+      <input name="member[balance]" type="balance">
+      <input type="submit" value="Get Portfolio">
   </form>
   <br>
-  <div>
-    <p1 id="gameMessage"></p1>
-  </div>
 
-    </body>
+
+  <!-- <br>
+  <form id="portfolio">
+    <input type="submit" value="Portfolio">
+  </form>
+  <br> -->
+
+
+
+  <canvas id="labelChart"></canvas>
+
+
+</body>
 </html>

@@ -25,8 +25,21 @@ const onSignOut = function (event) {
   api.signOut().then(ui.onSignOutSuccess).catch(ui.onSignOutFailure);
 };
 
+const onNewPortfolio = function(event) {
+  event.preventDefault();
+  const form = event.target;
+  const data = getFormFields(form);
+  console.log(data)
+
+  api.newPortfolio(data)
+    .then(ui.onNewPortfolioSuccess)
+    .catch(ui.onNewPortfolioFailure);
+
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  onNewPortfolio,
 };

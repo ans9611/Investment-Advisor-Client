@@ -1,5 +1,4 @@
 const store = require("./../store");
-// const game = require('./../gameStore')
 
 const onSignUpSuccess = (response) => {
   $("#message").text(
@@ -17,10 +16,7 @@ const onSignInSuccess = (response) => {
   store.token = response.user.token;
   store.id = response.user._id;
   $("#sign-up").trigger("reset");
-  $("#sign-in").hide();
-  $("#sign-up").hide();
-  $("#sign-out").show();
-  $("#new-game").show();
+
 };
 
 const onSignInFailure = () => {
@@ -34,8 +30,16 @@ const onSignOutSuccess = () => {
 };
 const onSignOutFailure = () => {
   $("#message").text(
-    "Unable to Signed out! You are destined to play one more game :)"
+    "Unable to Signed out! :)"
   );
+};
+
+const onNewPortfolioSuccess = () => {
+  $("#message").text("Successfully Get the portfolio");
+}
+
+const onNewPortfolioFailure = () => {
+  $("#message").text(`Unable to get Portfolio`);
 };
 
 module.exports = {
@@ -44,5 +48,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onNewPortfolioSuccess,
+  onNewPortfolioFailure,
 };

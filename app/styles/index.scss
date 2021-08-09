@@ -1,1 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  border-bottom: 10px solid  rgb(85, 85, 160);
+  background-color: aqua;
+  font-size: 50px;
+}
+
+body {
+  background-color: beige;
+}
+
+#sign-up {
+  border-bottom: 10px solid  rgb(85, 85, 160);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

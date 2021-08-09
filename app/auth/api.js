@@ -27,8 +27,20 @@ const signOut = function () {
   });
 };
 
+const newPortfolio = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/members",
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + store.token,
+    },
+    data: data,
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newPortfolio,
 };
