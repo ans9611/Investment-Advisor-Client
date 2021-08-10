@@ -48,10 +48,33 @@ const showData = function () {
     });
 }
 
+
+
+const deleteData = function (id) {
+  return $.ajax({
+    url: config.apiUrl + "/members/" + id,
+    method: "DELETE",
+    headers: { Authorization: "Bearer " + store.token },
+  });
+};
+
+const updateData = function (id, data) {
+  return $.ajax({
+    url: config.apiUrl + "/members/" + id,
+    method: "PATCH",
+    headers: { Authorization: "Bearer " + store.token },
+    data: data,
+  });
+};
+
+
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   newPortfolio,
-  showData
-}
+  showData,
+  deleteData,
+  updateData,
+};

@@ -3,6 +3,7 @@
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://kit.fontawesome.com/758dcd1ed0.js" crossorigin="anonymous"></script>
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -12,6 +13,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 <body>
+  <nav class ="navbar">
+    <div class="navbar_logo">
+      <i class="fas fa-socks"></i>
+      <a href="">GoldmanSocks</a>
+
+
+    </div>
+
+    <ul class="navbar_menu">
+      <li><a href="">Home</a></li>
+      <li><a href="">Portfolio</a></li>
+      <li><a href="">Account Balance</a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+
+    <ul class="navbar_icons">
+<li><i class="fab fa-linkedin"></i></li>
+<li><i class="fab fa-github"></i></li>
+    </ul>
+
+    <a href="#" class="navbar_tooleBtn"><i class="fas fa-bars"></i></a>
+
+  </nav>
+
   <h1>Investment Advisor</h1>
   <div>
     <p1 id="message"></p1>
@@ -62,13 +88,18 @@
   </form>
   <br>
 
-  <!-- <br>
-  <form id="portfolio">
-    <input type="submit" value="Portfolio">
-  </form>
-  <br> -->
+
+  <section class="container">
+    <p4>Click Risk</p4>
+    <div class="row h-100 board" id="game-board">
+      <div id="cell-ID-0" data-risk="LOW" class="box">LOW</div>
+      <div id="cell-ID-1" data-risk="MODERATE" class="box">MODERATE</div>
+      <div id="cell-ID-2" data-risk="HIGH" class="box">HIGH</div>
+    </div>
+  </section>
 
 
+  <div id="account-info"></div>
 
   <canvas id="labelChart"></canvas>
 

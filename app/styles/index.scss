@@ -1,20 +1,173 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  margin:0;
+  background-color: beige;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  background-color: #263343;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  border-bottom: 10px solid  rgb(85, 85, 160);
+
+}
+
+.navbar_logo {
+  font-size: 24px;
+  color: white;
+}
+
+.navbar_logo i{
+  color: #d49466
+}
+
+.navbar_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: #d49466;
+  border-radius: 4px;
+}
+
+.navbar_logo i {
+  color:#d49466;
+}
+
+.navbar_icons {
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar_icons li {
+  padding: 8px 12px;
+}
+
+.navbar_tooleBtn {
+  display:none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color:#d49466;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar_menu {
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+
+  }
+
+  .navbar_tooleBtn {
+   display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+
+}
+
 h1 {
   text-align: center;
-  padding-top: 20px;
   font-family: "Lucida Console", "Courier New", monospace;
   border-bottom: 10px solid  rgb(85, 85, 160);
   background-color: aqua;
   font-size: 50px;
 }
 
-body {
-  background-color: beige;
-}
+
 
 #sign-up {
   border-bottom: 10px solid  rgb(85, 85, 160);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container {
+  height: 20vh;
+  width: 20vh;
+}
+
+.board {
+  margin: auto;
+  // se the max size board to be 100% of
+  // max-height: calc(100vh - 75px);
+  // max-width: calc(100vh - 75px);
+  // background: url('./../../public/Eric\ Thomas\ -\ Success\ pic.jpeg');
+  // background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
+
+ .box {
+  border: 3px solid red;
+}
+
+#game-board .box {
+  border: 3px solid blue;
+
+
+  // &:nth-child(3n){
+  //   border-right:0;
+  // }
+
+  // &:nth-last-child(-1n+3){
+  //   border-bottom:0;
+  // }
+
+  // min-height: calc(100% / 3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: rgb(170, 45, 45);
+  // font-size: 5vh;
+
+
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+
+  &:hover {
+    background-color: lightskyblue;
+    user-select: none;
+  }
+  //user not select our text when clicking on it
+
 }

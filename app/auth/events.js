@@ -3,6 +3,7 @@ const api = require("./api");
 const ui = require("./ui");
 const getFormFields = require("../../lib/get-form-fields");
 
+
 const onSignUp = function (event) {
   event.preventDefault();
 
@@ -30,18 +31,47 @@ const onNewPortfolio = function(event) {
   const form = event.target;
   const data = getFormFields(form);
   console.log(data)
+  store.balance = data.member.balance;
+  console.log(store.balance);
 
-  api.newPortfolio(data)
+  api
+    .newPortfolio(data)
     .then(ui.onNewPortfolioSuccess)
     .catch(ui.onNewPortfolioFailure);
 }
 
 const onShowData = function(event) {
   event.preventDefault();
-  console.log("!")
+
   api.showData()
   .then(ui.onShowDataSuccess);
-  .catch(ui.onShowDataFailure)
+  // .catch(ui.onShowDataFailure);
+}
+
+const onDeleteData = function (event) {
+  event.preventDefault();
+
+  store.memberID = $(event.target).data("id");
+
+  api.deleteData(store.memberID)
+    .then(ui.onDeleteDataSuccess)
+    .catch(ui.onDeleteDataFailure);
+};
+
+
+const onUpdateData = function (event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const data = getFormFields(form);
+  const id = $(event.target).data("id");
+
+  console.log(data);
+  console.log(id)
+
+   api.updateData(id, data)
+     .then(ui.onUpdateDataSuccess)
+     .catch(ui.onUpdateDataFailure);
 }
 
 module.exports = {
@@ -49,5 +79,7 @@ module.exports = {
   onSignIn,
   onSignOut,
   onNewPortfolio,
-  onShowData
+  onShowData,
+  onDeleteData,
+  onUpdateData,
 };
