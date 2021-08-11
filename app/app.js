@@ -1,6 +1,9 @@
 const addEvents = require("./auth/events")
 const store = require("./store")
 
+
+
+
 $(() => {
   $("#sign-up").on("submit", addEvents.onSignUp);
   $("#sign-in").on("submit", addEvents.onSignIn);
@@ -10,9 +13,13 @@ $(() => {
 
   $("#account-info").on("click", ".delete-member", addEvents.onDeleteData);
   $("#account-info").on("submit", ".update-member", addEvents.onUpdateData);
-  $(".box").on("click", addEvents.onAddRisk);
 
 
+  $("#sign-out").hide()
+  $("#new-portfolio").hide();
+  $("#show-data").hide()
+
+  
 
 
    $(".navbar_tooleBtn").on("click", () => {
@@ -50,7 +57,7 @@ setTimeout(function () {
  google.charts.load("current", { packages: ["corechart"] });
  google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
-   var data = google.visualization.arrayToDataTable([
+   let data = google.visualization.arrayToDataTable([
      [`Total Account: ${totalBalance} `, "Dollars"],
      [`Cash: $${cash}`, 30],
      [`Bonds: $${bonds}`, 40],
@@ -58,12 +65,12 @@ function drawChart() {
      [`Alternative Investments: $${ai}`, 15],
    ]);
 
-   var options = {
+   let options = {
      title: "Portfolio for Conservative Investor",
      is3D: true,
    };
 
-   var chart = new google.visualization.PieChart(
+   let chart = new google.visualization.PieChart(
      document.getElementById("piechart_3d")
    );
    chart.draw(data, options);
@@ -71,7 +78,7 @@ function drawChart() {
 
  google.charts.setOnLoadCallback(drawChart2);
 function drawChart2() {
-  var data = google.visualization.arrayToDataTable([
+  let data = google.visualization.arrayToDataTable([
     [`Total Account: ${totalBalance} `, "Dollars"],
     [`Cash: $${cash}`, 10],
     [`Bonds: $${bonds}`, 40],
@@ -79,12 +86,12 @@ function drawChart2() {
     [`Alternative Investments: $${ai}`, 20],
   ]);
 
-  var options = {
+  let options = {
     title: "Portfolio for Moderate Investor",
     is3D: true,
   };
 
-  var chart = new google.visualization.PieChart(
+  let chart = new google.visualization.PieChart(
     document.getElementById("piechart_low")
   );
   chart.draw(data, options);
@@ -92,7 +99,7 @@ function drawChart2() {
 
  google.charts.setOnLoadCallback(drawChart3);
  function drawChart3() {
-   var data = google.visualization.arrayToDataTable([
+   let data = google.visualization.arrayToDataTable([
      [`Total Account: ${totalBalance} `, "Dollars"],
      [`Cash: $${cash}`, 0],
      [`Bonds: $${bonds}`, 20],
@@ -100,12 +107,12 @@ function drawChart2() {
      [`Alternative Investments: $${ai}`, 30],
    ]);
 
-   var options = {
+   let options = {
      title: "Portfolio for Aggresive Investor",
      is3D: true,
    };
 
-   var chart = new google.visualization.PieChart(
+   let chart = new google.visualization.PieChart(
      document.getElementById("piechart_high")
    );
    chart.draw(data, options);
@@ -113,17 +120,17 @@ function drawChart2() {
 
   google.charts.setOnLoadCallback(drawChart4);
   function drawChart4() {
-    var data = google.visualization.arrayToDataTable([
+    let data = google.visualization.arrayToDataTable([
       [`Lottery Tickets: $${totalBalance} `, "Dollars"],
       [`Lottery Tickets: $${totalBalance}`, 100],
     ]);
 
-    var options = {
+    let options = {
       title: "Portfolio for Impulsive Man",
       is3D: true,
     };
 
-    var chart = new google.visualization.PieChart(
+    let chart = new google.visualization.PieChart(
       document.getElementById("piechart_crazy")
     );
     chart.draw(data, options);

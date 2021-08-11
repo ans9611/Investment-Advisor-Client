@@ -46,6 +46,7 @@ const onSignUpSuccess = (response) => {
   $("#message").text(
     `Thank you for signing Up! ${response.user.email} Sign in To play Game!!`
   );
+
 };
 
 const onSighUpFailure = () => {
@@ -58,6 +59,10 @@ const onSignInSuccess = (response) => {
   store.token = response.user.token;
   store.id = response.user._id;
   $("#sign-up").trigger("reset");
+$("#new-portfolio").show();
+   $("#show-data").show();
+   $("#sign-in").hide()
+   $("#sign-out").show()
 
 };
 
@@ -68,7 +73,11 @@ const onSignInFailure = () => {
 
 const onSignOutSuccess = () => {
   $("#message").text("Successfully Signed out! Thank you! Come Again!");
-
+  $("#sign-out").hide();
+  $("#new-portfolio").hide();
+  $("#show-data").hide();
+  $("#sign-in").show()
+  $("#account-info").hide();
 };
 const onSignOutFailure = () => {
   $("#message").text(
@@ -89,7 +98,7 @@ const onNewPortfolioSuccess = (response) => {
      let num = Number(data[i].balance);
      totalBalance += num;
    }
-
+$("#new-portfolio").show();
   $("#message").text("Successfully Get the portfolio");
 };
 
@@ -116,6 +125,7 @@ const onShowDataSuccess = (response) => {
 
      store.totalBalance = totalBalance;
      console.log(store.totalBalance);
+     $("#account-info").show()
 };
 
 

@@ -7,7 +7,9 @@
     "content": "CC­BY­NC­SA 4.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
     "jquery": "^3.6.0",
     "popper.js": "^1.14.3",
     "youtube-video-js": "^3.4.0"

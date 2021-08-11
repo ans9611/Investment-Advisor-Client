@@ -9,6 +9,7 @@ body {
   background-position: center;
 }
 
+
 .sing-up-page {
   width: 360px;
   padding: 10% 0 0;
@@ -72,6 +73,39 @@ a {
   text-decoration: none;
   color: white;
 }
+
+
+
+.chart {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-position: center;
+  justify-content: space-around;
+}
+
+.portfolio-page {
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+
+}
+
+.portfolio-page #head{
+   background-size: cover;
+  background-position: absolute center;
+  margin: auto;
+}
+
+.chart #piechart_3d, #piechart_low, #piechart_high, #piechart_crazy {
+   min-height: 300px;
+   min-width: 500px;
+   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+   border: 10px solid  rgb(85, 85, 160)
+
+
+}
+
 
 .navbar {
   background-color: #263343;
@@ -175,10 +209,14 @@ a {
 
 h1 {
   text-align: center;
-  font-family: "Lucida Console", "Courier New", monospace;
-  border-bottom: 10px solid  rgb(85, 85, 160);
-  background-color: aqua;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
   font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  border-bottom: double 15px;
+  padding: 15px;
+  color: #ffff;
+  margin: auto;
 }
 
 
