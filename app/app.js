@@ -42,6 +42,9 @@ setTimeout(function () {
   stocks = (store.totalBalance * 0.3).toFixed(2);
   ai = (store.totalBalance * 0.2).toFixed(2);
   drawChart();
+  drawChart2();
+  drawChart3();
+  drawChart4();
 }, 9000);
 
  google.charts.load("current", { packages: ["corechart"] });
@@ -49,14 +52,14 @@ setTimeout(function () {
 function drawChart() {
    var data = google.visualization.arrayToDataTable([
      [`Total Account: ${totalBalance} `, "Dollars"],
-     [`Cash: $${cash}`, 10],
+     [`Cash: $${cash}`, 30],
      [`Bonds: $${bonds}`, 40],
-     [`Stocks: $${stocks}`, 30],
-     [`Alternative Investments: $${ai}`, 20],
+     [`Stocks: $${stocks}`, 15],
+     [`Alternative Investments: $${ai}`, 15],
    ]);
 
    var options = {
-     title: "Portfolio",
+     title: "Portfolio for Conservative Investor",
      is3D: true,
    };
 
@@ -65,3 +68,63 @@ function drawChart() {
    );
    chart.draw(data, options);
  }
+
+ google.charts.setOnLoadCallback(drawChart2);
+function drawChart2() {
+  var data = google.visualization.arrayToDataTable([
+    [`Total Account: ${totalBalance} `, "Dollars"],
+    [`Cash: $${cash}`, 10],
+    [`Bonds: $${bonds}`, 40],
+    [`Stocks: $${stocks}`, 30],
+    [`Alternative Investments: $${ai}`, 20],
+  ]);
+
+  var options = {
+    title: "Portfolio for Moderate Investor",
+    is3D: true,
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById("piechart_low")
+  );
+  chart.draw(data, options);
+}
+
+ google.charts.setOnLoadCallback(drawChart3);
+ function drawChart3() {
+   var data = google.visualization.arrayToDataTable([
+     [`Total Account: ${totalBalance} `, "Dollars"],
+     [`Cash: $${cash}`, 0],
+     [`Bonds: $${bonds}`, 20],
+     [`Stocks: $${stocks}`, 50],
+     [`Alternative Investments: $${ai}`, 30],
+   ]);
+
+   var options = {
+     title: "Portfolio for Aggresive Investor",
+     is3D: true,
+   };
+
+   var chart = new google.visualization.PieChart(
+     document.getElementById("piechart_high")
+   );
+   chart.draw(data, options);
+ }
+
+  google.charts.setOnLoadCallback(drawChart4);
+  function drawChart4() {
+    var data = google.visualization.arrayToDataTable([
+      [`Lottery Tickets: $${totalBalance} `, "Dollars"],
+      [`Lottery Tickets: $${totalBalance}`, 100],
+    ]);
+
+    var options = {
+      title: "Portfolio for Impulsive Man",
+      is3D: true,
+    };
+
+    var chart = new google.visualization.PieChart(
+      document.getElementById("piechart_crazy")
+    );
+    chart.draw(data, options);
+  }
