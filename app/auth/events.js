@@ -32,7 +32,6 @@ const onNewPortfolio = function(event) {
   const data = getFormFields(form);
   console.log(data)
   store.balance = data.member.balance;
-  console.log(store.balance);
 
   api
     .newPortfolio(data)
@@ -40,9 +39,23 @@ const onNewPortfolio = function(event) {
     .catch(ui.onNewPortfolioFailure);
 }
 
+const onAddRisk = function(event) {
+  event.preventDefault();
+  const box = $(event.target)
+  const risk = box.data("risk")
+  let data = {
+    member: {
+      risk: risk
+    }}
+    api.newPortfolio(data)
+      .then(ui.onNewPortfolioSuccess)
+      .catch(ui.onNewPortfolioFailure);
+
+}
+
 const onShowData = function(event) {
   event.preventDefault();
-
+console.log(store.token);
   api.showData()
   .then(ui.onShowDataSuccess);
   // .catch(ui.onShowDataFailure);
@@ -82,4 +95,5 @@ module.exports = {
   onShowData,
   onDeleteData,
   onUpdateData,
+  onAddRisk,
 };

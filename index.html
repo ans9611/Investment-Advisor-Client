@@ -4,6 +4,7 @@
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://kit.fontawesome.com/758dcd1ed0.js" crossorigin="anonymous"></script>
+      <script type="module" src="/node_modules/youtube-video-js/dist/youtube-video.js"></script>
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -17,8 +18,6 @@
     <div class="navbar_logo">
       <i class="fas fa-socks"></i>
       <a href="">GoldmanSocks</a>
-
-
     </div>
 
     <ul class="navbar_menu">
@@ -37,6 +36,15 @@
     <a href="#" class="navbar_tooleBtn"><i class="fas fa-bars"></i></a>
 
   </nav>
+
+  <!-- <div class="player">
+    <div><youtube-video width="300" height="300" src="https://www.youtube.com/watch?v=E22hglDPOss&ab_channel=YahooFinance"
+      /></div>
+<div><youtube-video width="300" height="300" src="https://www.youtube.com/watch?v=LhugYM0ASTU&ab_channel=ForexLia"
+/></div>
+<div><youtube-video width="300" height="300"
+  src="https://www.youtube.com/watch?v=JES9PUAv54A&ab_channel=FatPigSignalsTradingLive" /></div>
+  </div> -->
 
   <h1>Investment Advisor</h1>
   <div>
@@ -90,7 +98,6 @@
 
 
   <section class="container">
-    <p4>Click Risk</p4>
     <div class="row h-100 board" id="game-board">
       <div id="cell-ID-0" data-risk="LOW" class="box">LOW</div>
       <div id="cell-ID-1" data-risk="MODERATE" class="box">MODERATE</div>
@@ -100,8 +107,11 @@
 
 
   <div id="account-info"></div>
+  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
 
-  <canvas id="labelChart"></canvas>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
 
 
 </body>

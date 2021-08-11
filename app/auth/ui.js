@@ -1,5 +1,6 @@
 const store = require("./../store");
 const api = require("./api");
+const app = require("./../app")
 
 const storeData = function (response) {
   store.member = response.member;
@@ -61,6 +62,12 @@ const onNewPortfolioSuccess = (response) => {
   store.name = response.member.name;
   console.log(store.name)
   console.log(store)
+   const data = response.member;
+   let totalBalance = 0;
+   for (let i = 0; i < data.length; i++) {
+     let num = Number(data[i].balance);
+     totalBalance += num;
+   }
 
   $("#message").text("Successfully Get the portfolio");
 };
@@ -70,6 +77,9 @@ const onNewPortfolioFailure = () => {
   $("#message").text(`Unable to get Portfolio`);
 };
 
+
+
+
 const onShowDataSuccess = (response) => {
   const data = response.member
   let totalBalance = 0
@@ -77,9 +87,20 @@ const onShowDataSuccess = (response) => {
     let num = Number(data[i].balance);
     totalBalance += num;
   }
+  console.log(data)
+  console.log(totalBalance);
+  app.totalBalance = totalBalance
   $("#message").text("Successfully Get the Data");
   storeData(response)
+
+     store.totalBalance = totalBalance;
+     console.log(store.totalBalance);
 };
+
+
+
+
+
 const onShowDataFailure = () => {
   $("#message").text("Unable to Get the Data");
 };
