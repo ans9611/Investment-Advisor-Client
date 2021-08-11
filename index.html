@@ -46,7 +46,6 @@
   src="https://www.youtube.com/watch?v=JES9PUAv54A&ab_channel=FatPigSignalsTradingLive" /></div>
   </div> -->
 
-  <h1>Investment Advisor</h1>
   <div>
     <p1 id="message"></p1>
   </div>
@@ -74,13 +73,21 @@
     </div>
   </div>
 
-  <br>
+  <div class="portfolio-page">
+    <div class="form">
+      <form id="new-portfolio">
+        <input name="member[balance]" type="balance" placeholder="Add Balance">
+        <input name="member[name]" type="name" placeholder="Description [optional]">
+        <input type="submit" value="ADD BALANCE">
+      </form>
+      <form id="show-data">
+        <input type="submit" value="Show Data">
+        <p class="sign-message">Want To Update? <a href="#">update</a></p>
+      </form>
+    </div>
+  </div>
 
-
-
-
-
-  <br>
+  <!-- <br>
   <form id="new-portfolio">
       <label>Name</label>
       <input name="member[name]" type="name">
@@ -90,22 +97,22 @@
       <input name="member[balance]" type="balance">
       <input type="submit" value="Get Portfolio">
   </form>
-  <br>
-
+  <br> -->
+<!--
   <br>
   <form id="show-data">
     <input type="submit" value="Show Data">
-  </form>
+  </form> -->
   <br>
 
 
-  <section class="container">
+  <!-- <section class="container">
     <div class="row h-100 board" id="game-board">
       <div id="cell-ID-0" data-risk="LOW" class="box">LOW</div>
       <div id="cell-ID-1" data-risk="MODERATE" class="box">MODERATE</div>
       <div id="cell-ID-2" data-risk="HIGH" class="box">HIGH</div>
     </div>
-  </section>
+  </section> -->
 
 
   <div id="account-info"></div>

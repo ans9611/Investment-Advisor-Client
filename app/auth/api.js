@@ -1,5 +1,5 @@
-const store = require("./../store");
-const config = require("./../config");
+const store = require("../store");
+const config = require("../config");
 
 const signUp = function (data) {
   return $.ajax({

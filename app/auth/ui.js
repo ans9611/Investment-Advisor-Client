@@ -1,26 +1,47 @@
-const store = require("./../store");
+const store = require("../store");
 const api = require("./api");
-const app = require("./../app")
+const app = require("../app")
 
 const storeData = function (response) {
   store.member = response.member;
+  let tableFirst =
+  `<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Balance</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>`;
+
   store.memberHtml = "";
-  store.member.forEach((member) => {
-    store.memberHtml += `<div id="info" class="col-4 box">
-      <h5>Account History</h5>
-        <p>DATE: ${member.name}</p>
-        <p>BALANCE: ${member.balance}</p>
-      <form class='update-member' data-id=${member._id}>
-          <label>Balance</label>
-      <input name="member[balance]" type="balance">
+  let tableLast = `</table>`;
+
+    store.member.forEach((member) => {
+      store.memberHtml += `
+    <tbody>
+        <tr>
+            <td>2016</td>
+            <td>${member.name}</td>
+            <td>${member.balance}</td>
+            <td><form class='update-member' data-id=${member._id}>
+      <input name="member[balance]" type="balance" placeholder="balance">
       <input type="submit" value="Update">
-      </form>
-      <button class='delete-member' data-id=${member._id}>Remove</button>
-    </div>
-    `;
-  });
-  $("#account-info").html(store.memberHtml);
+      </td>
+            <td><button class='delete-member' data-id=${member._id}>Remove</button></td>
+      </tr>
+    </tbody>
+`;});
+
+  let table = tableFirst + store.memberHtml + tableLast;
+
+  $("#account-info").html(table);
 };
+
+
+
 const onSignUpSuccess = (response) => {
   $("#message").text(
     `Thank you for signing Up! ${response.user.email} Sign in To play Game!!`

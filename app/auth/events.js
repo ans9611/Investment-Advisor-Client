@@ -1,4 +1,4 @@
-const store = require("./../store");
+const store = require("../store");
 const api = require("./api");
 const ui = require("./ui");
 const getFormFields = require("../../lib/get-form-fields");
