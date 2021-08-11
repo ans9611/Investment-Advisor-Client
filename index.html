@@ -52,31 +52,33 @@
   </div>
   <br>
 
+  <div class="sing-up-page">
+    <div class="form">
   <form id="sign-up">
-    <label>Email:</label>
-    <input name="credentials[email]" type="email">
-    <label>Password:</label>
-    <input name="credentials[password]" type="password">
-    <label>Password Confirmation:</label>
-    <input name="credentials[password_confirmation]" type="password">
+    <input name="credentials[email]" type="email" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
     <input type="submit" value="sign-up">
+    <p class="sign-message">Already Signed Up? <a href="#">Sign In</a></p>
   </form>
+
+    <form id="sign-in">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input type="submit" value="sign-in">
+      <p class="sign-message">Not Signed Up? <a href="#">Sign Up</a></p>
+    </form>
+    <form id="sign-out">
+      <input type="submit" value="sign-out">
+    </form>
+    </div>
+  </div>
 
   <br>
 
-  <form id="sign-in">
-    <label>Email:</label>
-    <input name="credentials[email]" type="email">
-    <label>Password:</label>
-    <input name="credentials[password]" type="password">
-    <input type="submit" value="sign-in">
-  </form>
 
-  <br>
-  <form id="sign-out">
-    <input type="submit" value="sign-out">
-  </form>
-  <br>
+
+
 
   <br>
   <form id="new-portfolio">
@@ -111,7 +113,7 @@
 
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  
+
 
 
 </body>

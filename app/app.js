@@ -12,14 +12,21 @@ $(() => {
   $("#account-info").on("submit", ".update-member", addEvents.onUpdateData);
   $(".box").on("click", addEvents.onAddRisk);
 
+
+
+
    $(".navbar_tooleBtn").on("click", () => {
      $(".navbar_menu").toggle("active");
      $(".navbar_icons").toggle("active");
    });
 
-
+  $(".sign-message a").on("click", () => {
+    $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+  });
 
 });
+
+
 
 let totalBalance = 0;
 let cash = 0;

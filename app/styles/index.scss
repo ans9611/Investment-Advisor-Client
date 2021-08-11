@@ -2,7 +2,70 @@
 
 body {
   margin:0;
-  background-color: beige;
+  background-image:url('https://www.genpact.com/craft/assets/uploads/images/service-lines/sl-genone-finance-as-a-service-hero.jpg');
+  // linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.sing-up-page {
+  width: 360px;
+  padding: 10% 0 0;
+  margin: auto;
+  color: aqua;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 1;
+  background: #f2f2f2;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background:aqua;
+  width: 100%;
+  border:0;
+  padding: 15px;
+  font-size: 14px;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.form input[type=submit]:hover, .form input[type=submit]:active {
+  background: #43A047;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.form #sign-up {
+  display: none;
 }
 
 a {
