@@ -85,6 +85,14 @@ const onSignOutFailure = () => {
   );
 };
 
+const onChangePasswordSuccess = () => {
+  $("#message").text("Successfully Changed Password!");
+}
+
+const onChangePasswordFailure = () => {
+  $("#message").text("Not Successfully Changed Password!");
+};
+
 const onNewPortfolioSuccess = (response) => {
   console.log(response)
   store.balance = response.member.balance
@@ -106,9 +114,6 @@ $("#new-portfolio").show();
 const onNewPortfolioFailure = () => {
   $("#message").text(`Unable to get Portfolio`);
 };
-
-
-
 
 const onShowDataSuccess = (response) => {
   const data = response.member
@@ -169,4 +174,6 @@ module.exports = {
   onDeleteDataFailure,
   onUpdateDataSuccess,
   onUpdateDataFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure,
 };

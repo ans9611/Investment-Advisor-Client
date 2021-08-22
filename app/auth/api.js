@@ -27,6 +27,15 @@ const signOut = function () {
   });
 };
 
+const onChangePassword = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/change-password",
+    method: "PATCH",
+    headers: { Authorization: "Bearer " + store.token },
+    data: data,
+  });
+};
+
 const newPortfolio = function (data) {
   return $.ajax({
     url: config.apiUrl + "/members",
@@ -67,8 +76,6 @@ const updateData = function (id, data) {
   });
 };
 
-
-
 module.exports = {
   signUp,
   signIn,
@@ -77,4 +84,5 @@ module.exports = {
   showData,
   deleteData,
   updateData,
+  onChangePassword,
 };

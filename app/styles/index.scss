@@ -9,7 +9,6 @@ body {
   background-position: center;
 }
 
-
 .sing-up-page {
   width: 360px;
   padding: 10% 0 0;
@@ -74,7 +73,14 @@ a {
   color: white;
 }
 
-
+#message {
+  color: white;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+  padding-left: 10px;
+}
 
 .chart {
   display: flex;

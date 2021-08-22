@@ -86,6 +86,20 @@ const onUpdateData = function (event) {
      .catch(ui.onUpdateDataFailure);
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+
+  const form = event.target;
+  const data = getFormFields(form);
+
+  console.log(data)
+
+  api
+    .onChangePassword(data)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure);
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -95,4 +109,5 @@ module.exports = {
   onDeleteData,
   onUpdateData,
   onAddRisk,
+  onChangePassword,
 };
