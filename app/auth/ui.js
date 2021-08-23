@@ -3,8 +3,8 @@ const api = require('./api')
 const app = require('../app')
 
 const storeData = function (response) {
-  store.member = response.member
-  const tableFirst =
+  store.member = response.member;
+  let tableFirst =
   `<table class="styled-table">
     <thead>
         <tr>
@@ -14,13 +14,13 @@ const storeData = function (response) {
             <th>Update</th>
             <th>Delete</th>
         </tr>
-    </thead>`
+    </thead>`;
 
-  store.memberHtml = ''
-  const tableLast = '</table>'
+  store.memberHtml = "";
+  let tableLast = `</table>`;
 
-  store.member.forEach((member) => {
-    store.memberHtml += `
+    store.member.forEach((member) => {
+      store.memberHtml += `
     <tbody>
         <tr>
             <td>2016</td>
@@ -28,13 +28,12 @@ const storeData = function (response) {
             <td>${member.balance}</td>
             <td><form class='update-member' data-id=${member._id}>
       <input name="member[balance]" type="balance" placeholder="balance">
-      <input type="submit" value="Update">
+      <input type="submit" value="Update"></form>
       </td>
             <td><button class='delete-member' data-id=${member._id}>Remove</button></td>
       </tr>
     </tbody>
-`
-  })
+`;});
 
   const table = tableFirst + store.memberHtml + tableLast
 
@@ -107,7 +106,6 @@ const onNewPortfolioSuccess = (response) => {
   }
   $('#new-portfolio').show()
   $('#message').text('Successfully Get the portfolio')
-  $('.chart').show()
 }
 
 const onNewPortfolioFailure = () => {

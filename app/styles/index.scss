@@ -117,15 +117,15 @@ a {
   background-color: #263343;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 8px 24px;
+  align-items: baseline;
+  padding-bottom: 0px;
   border-bottom: 10px solid  rgb(85, 85, 160);
-
 }
 
 .navbar_logo {
   font-size: 24px;
   color: white;
+  padding-left: 20px;
 }
 
 .navbar_logo i{

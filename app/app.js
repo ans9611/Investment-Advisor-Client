@@ -25,6 +25,8 @@ $(() => {
 
   $('.sign-message a').on('click', () => {
     $('form').animate({ height: 'toggle', opacity: 'toggle' }, 'slow')
+    $("#change-password").hide();
+    $("#sign-out").hide();
   })
   $('.update-message').on('click', () => {
     $('#change-password').show()
