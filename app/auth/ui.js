@@ -80,6 +80,7 @@ const onSignOutSuccess = () => {
   $('.portfolio-page').hide()
   $('#change-password').hide()
   $(".portfolio-graph").hide()
+   $("#show-portfolio").hide()
 }
 const onSignOutFailure = () => {
   $('#message').text(
@@ -96,12 +97,9 @@ const onChangePasswordFailure = () => {
 }
 
 const onNewPortfolioSuccess = (response) => {
-  console.log(response)
   store.balance = response.member.balance
   store.risk = response.member.risk
   store.name = response.member.name
-  console.log(store.name)
-  console.log(store)
   const data = response.member
   let totalBalance = 0
   for (let i = 0; i < data.length; i++) {
@@ -109,11 +107,13 @@ const onNewPortfolioSuccess = (response) => {
     totalBalance += num
   }
   $('#new-portfolio').show()
-  $('#message').text('Successfully Get the portfolio')
+  $('#message').text('Successfully Added New Investment. Please Click SHOW DATA to see updated DATA!')
+  $("#account-info").show();
+
 }
 
 const onNewPortfolioFailure = () => {
-  $('#message').text('Unable to get Portfolio')
+  $('#message').text('Unable to ADD NEW Investment')
 }
 
 const onShowDataSuccess = (response) => {
@@ -123,15 +123,13 @@ const onShowDataSuccess = (response) => {
     const num = Number(data[i].balance)
     totalBalance += num
   }
-  console.log(data)
-  console.log(totalBalance)
   app.totalBalance = totalBalance
   $('#message').text('Successfully Get the Data')
   storeData(response)
 
   store.totalBalance = totalBalance
-  console.log(store.totalBalance)
   $('#account-info').show()
+  $("#show-portfolio").show();
 }
 
 const onShowDataFailure = () => {

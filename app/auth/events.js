@@ -29,7 +29,7 @@ const onNewPortfolio = function(event) {
   event.preventDefault();
   const form = event.target;
   const data = getFormFields(form);
-  console.log(data)
+
   store.balance = data.member.balance;
 
   api
@@ -54,7 +54,6 @@ const onAddRisk = function(event) {
 
 const onShowData = function(event) {
   event.preventDefault();
-console.log(store.token);
   api.showData()
   .then(ui.onShowDataSuccess);
   // .catch(ui.onShowDataFailure);
@@ -78,9 +77,6 @@ const onUpdateData = function (event) {
   const data = getFormFields(form);
   const id = $(event.target).data("id");
 
-  console.log(data);
-  console.log(id)
-
    api.updateData(id, data)
      .then(ui.onUpdateDataSuccess)
      .catch(ui.onUpdateDataFailure);
@@ -91,8 +87,6 @@ const onChangePassword = function (event) {
 
   const form = event.target;
   const data = getFormFields(form);
-
-  console.log(data)
 
   api
     .onChangePassword(data)

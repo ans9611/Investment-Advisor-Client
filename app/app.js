@@ -1,5 +1,10 @@
 const addEvents = require('./auth/events')
 const store = require('./store')
+let totalBalance = 0;
+let cash = 0;
+let bonds = 0;
+let stocks = 0;
+let ai = 0;
 
 $(() => {
   $('#sign-up').on('submit', addEvents.onSignUp)
@@ -18,9 +23,22 @@ $(() => {
   $('#change-password').hide()
   $(".portfolio-page").hide();
   $(".portfolio-graph").hide();
+  $("#show-portfolio").hide()
   $("#show-portfolio").on("submit", (event) => {
     $(".portfolio-graph").show();
     event.preventDefault()
+    setTimeout(function () {
+      totalBalance = store.totalBalance;
+      cash = (store.totalBalance * 0.1).toFixed(2);
+      bonds = (store.totalBalance * 0.4).toFixed(2);
+      stocks = (store.totalBalance * 0.3).toFixed(2);
+      ai = (store.totalBalance * 0.2).toFixed(2);
+      drawChart();
+      drawChart2();
+      drawChart3();
+      drawChart4();
+    }, 500);
+
   });
 
 
@@ -39,24 +57,6 @@ $(() => {
   })
 })
 
-let totalBalance = 0
-let cash = 0
-let bonds = 0
-let stocks = 0
-let ai = 0
-setTimeout(function () {
-  console.log(store)
-  console.log(store.totalBalance)
-  totalBalance = store.totalBalance
-  cash = (store.totalBalance * 0.1).toFixed(2)
-  bonds = (store.totalBalance * 0.4).toFixed(2)
-  stocks = (store.totalBalance * 0.3).toFixed(2)
-  ai = (store.totalBalance * 0.2).toFixed(2)
-  drawChart()
-  drawChart2()
-  drawChart3()
-  drawChart4()
-}, 9000)
 
 google.charts.load('current', { packages: ['corechart'] })
 google.charts.setOnLoadCallback(drawChart)
