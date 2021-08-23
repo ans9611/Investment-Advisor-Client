@@ -1,5 +1,13 @@
 # Project 2 Plan
 
+API:
+https://github.com/ans9611/Investment-Advisor-API
+
+Client:
+https://github.com/ans9611/Investment-Advisor-Client
+
+deployment:
+https://ans9611.github.io/Investment-Advisor-Client/
 
 ## Introduction
 ```md
