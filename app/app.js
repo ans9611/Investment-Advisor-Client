@@ -17,6 +17,12 @@ $(() => {
   $('#show-data').hide()
   $('#change-password').hide()
   $(".portfolio-page").hide();
+  $(".portfolio-graph").hide();
+  $("#show-portfolio").on("submit", (event) => {
+    $(".portfolio-graph").show();
+    event.preventDefault()
+  });
+
 
   $('.navbar_tooleBtn').on('click', () => {
     $('.navbar_menu').toggle('active')

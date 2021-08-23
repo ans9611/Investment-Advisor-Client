@@ -4,8 +4,7 @@ const app = require('../app')
 
 const storeData = function (response) {
   store.member = response.member;
-  let tableFirst =
-  `<table class="styled-table">
+  let tableFirst = `<table class="styled-table">
     <thead>
         <tr>
             <th>Date</th>
@@ -14,7 +13,11 @@ const storeData = function (response) {
             <th>Update</th>
             <th>Delete</th>
         </tr>
-    </thead>`;
+    </thead>
+    <script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>`;
 
   store.memberHtml = "";
   let tableLast = `</table>`;
@@ -23,7 +26,7 @@ const storeData = function (response) {
       store.memberHtml += `
     <tbody>
         <tr>
-            <td>2016</td>
+            <td>Date/Time: <span id="datetime"></span></td>
             <td>${member.name}</td>
             <td>${member.balance}</td>
             <td><form class='update-member' data-id=${member._id}>
@@ -76,6 +79,7 @@ const onSignOutSuccess = () => {
   $('#account-info').hide()
   $('.portfolio-page').hide()
   $('#change-password').hide()
+  $(".portfolio-graph").hide()
 }
 const onSignOutFailure = () => {
   $('#message').text(
