@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://kit.fontawesome.com/758dcd1ed0.js" crossorigin="anonymous"></script>
+      <script type="module" src="/node_modules/youtube-video-js/dist/youtube-video.js"></script>
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+<body>
+  <nav class ="navbar">
+    <div class="navbar_logo">
+      <i class="fas fa-socks"></i>
+      <a href="">GoldmanSocks</a>
+    </div>
+
+    <ul class="navbar_menu">
+      <li><a href="https://finance.yahoo.com/" target="_blank">NEWS</a></li>
+      <li><a href="https://www.nasdaq.com/market-activity/stocks" target="_blank">Nasdaq</a></li>
+      <li><a href="https://www.investopedia.com/" target="_blank">Investopedia</a></li>
+      <li><a href="https://www.tradingview.com/markets/stocks-usa/market-movers-large-cap/" target="_blank">Live Stock</a></li>
+      <li><a href="https://www.tradingview.com/markets/bonds/prices-all/" target="_blank">Bonds</a></li>
+      <li><a href="https://www.tradingview.com/markets/currencies/rates-major/" target="_blank">Currencies</a></li>
+      <li><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" target="_blank">Crypto</a></li>
+      <li><a href="" target="_blank"></a></li>
+    </ul>
+
+    <ul class="navbar_icons">
+<li><a href="https://www.linkedin.com/in/moon-yechan/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+<li><a href="https://github.com/ans9611/Investment-Advisor-Client" target="_blank"><i class="fab fa-github"></i></a></li>
+    </ul>
+
+    <a href="#" class="navbar_tooleBtn"><i class="fas fa-bars"></i></a>
+
+  </nav>
+
+
+  <div>
+    <p1 id="message"></p1>
+  </div>
+  <br>
+
+  <div class="sing-up-page">
+    <div class="form">
+  <form id="sign-up">
+    <input name="credentials[email]" type="email" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+    <input type="submit" value="sign-up">
+    <p class="sign-message">Already Signed Up? <a href="#">Sign In</a></p>
+  </form>
+
+    <form id="sign-in">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input type="submit" value="sign-in">
+      <p class="sign-message">Not Signed Up? <a href="#">Sign Up</a></p>
+    </form>
+
+    <form id="sign-out">
+      <input type="submit" value="sign-out">
+      <p class="update-message">Change Password?<a href="#"> Change</a></p>
+    </form>
+
+        <form id="change-password">
+          <input name="passwords[old]" type="old" placeholder="old password">
+          <input name="passwords[new]" type="new" placeholder="new password">
+          <input type="submit" value="change-password">
+        </form>
+
+    </div>
+  </div>
+
+  <div class="portfolio-page">
+    <div class="form">
+      <form id="new-portfolio">
+        <input name="member[balance]" type="balance" placeholder="Add Balance">
+        <input name="member[name]" type="name" placeholder="Description [optional]">
+        <input type="submit" value="ADD BALANCE">
+      </form>
+      <form id="show-data">
+        <input type="submit" value="Show Data">
+      </form>
+      <form id="show-portfolio">
+        <input type="submit" value="Show Portfolio">
+      </form>
+    </div>
+  </div>
+
+    <div>
+      <p1 id="message-update"></p1>
+    </div>
+
+  <div id="account-info"></div>
+
+<div class="portfolio-graph">
+    <div><h1 id="head">Portfolio</p1></div>
+<div class="chart">
+  <div id="piechart_3d" style="width: 500px; height: 300px;"></div>
+  <div id="piechart_low" style="width: 500px; height: 300px;"></div>
+  <div id="piechart_high" style="width: 500px; height: 300px;"></div>
+  <div id="piechart_crazy" style="width: 500px; height: 300px;"></div>
+</div>
+</div>
+
+
+  <!-- <div class="player">
+      <div><youtube-video width="300" height="300" src="https://www.youtube.com/watch?v=E22hglDPOss&ab_channel=YahooFinance"
+        /></div>
+  <div><youtube-video width="300" height="300" src="https://www.youtube.com/watch?v=LhugYM0ASTU&ab_channel=ForexLia"
+  /></div>
+  <div><youtube-video width="300" height="300"
+    src="https://www.youtube.com/watch?v=JES9PUAv54A&ab_channel=FatPigSignalsTradingLive" /></div>
+    </div> -->
+
+
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+</body>
+</html>
